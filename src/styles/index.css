@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-white;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply flex items-center px-6 py-1 text-base font-bold text-white transition duration-200 ease-in-out transform bg-blue-500 rounded-md hover:bg-blue-400 hover:scale-105;
+  }
+  .btn-info {
+    @apply flex items-center px-6 py-1 text-base font-bold text-white transition duration-200 ease-in-out transform bg-indigo-500 rounded-md hover:bg-indigo-400 hover:scale-105;
+  }
+  .btn-warning {
+    @apply flex items-center px-6 py-1 text-base font-bold text-white transition duration-200 ease-in-out transform bg-yellow-500 rounded-md hover:bg-yellow-400 hover:scale-105;
+  }
+  .btn-success {
+    @apply flex items-center px-6 py-1 text-base font-bold text-white transition duration-200 ease-in-out transform bg-green-500 rounded-md hover:bg-green-400 hover:scale-105;
+  }
+  .btn-danger {
+    @apply flex items-center px-6 py-1 text-base font-bold text-white transition duration-200 ease-in-out transform bg-red-500 rounded-md hover:bg-red-400 hover:scale-105;
+  }
+
+  /* Inputs */
+  .input-md {
+    @apply p-2 pl-4 border-2 border-gray-400 rounded-lg shadow-md outline-none w-80 focus:bg-white focus:border-blue-400;
+  }
+}
