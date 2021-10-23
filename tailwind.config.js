@@ -13,7 +13,9 @@ module.exports = {
 				85: ".85",
 			},
 			fontFamily: {
-				"special-text": ["Yanone Kaffeesatz", "sans-serif"],
+				"special-1": ["Yanone Kaffeesatz", "sans-serif"],
+				"special-2": ["Caveat", "cursive"],
+				"special-3": ["Yanone Kaffeesatz", "sans-serif"],
 			},
 		},
 	},

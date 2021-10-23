@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import { NavLink } from "react-router-dom";
 
 const Navbar: FC = () => {
 	return (
-		<nav className="fixed top-0 z-40 flex justify-center w-full text-center bg-white shadow-md font-special-text center-content">
+		<nav className="fixed top-0 z-40 flex justify-center w-full text-center bg-white shadow-md font-special-1 center-content">
 			<div className="flex items-center justify-center w-full px-10 py-3 sm:justify-between">
 				<h1 className="hidden text-4xl sm:block ">
 					<span className="text-green-500">Stephen</span> &{" "}
