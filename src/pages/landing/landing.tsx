@@ -10,15 +10,14 @@ import Invite from "assets/images/Invite.png";
 
 const Landing: FC = () => {
 	return (
-		<div className="flex flex-col justify-center min-h-screen">
+		<div className="flex flex-col items-center justify-center min-h-screen">
 			{/* <ThreeView /> */}
 			<div className="p-10 mx-40 my-20 shadow-xl">
 				<div className="p-10 text-3xl font-light shadow-inner-lg">
 					<p>
-						Thanks for helping us celebrate! We are so excited to
-						get started on this chapter of our lives. Feel free to
-						stick around and look at pictures. Our registries are
-						located on the links above. Thank you! ❤
+						Thanks for helping us celebrate! Feel free to stick
+						around and look at pictures. Our registries are located
+						on the links above. Thank you! ❤
 					</p>
 				</div>
 			</div>
