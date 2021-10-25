@@ -1,20 +1,20 @@
-import { FC, useEffect, useState } from "react";
-import Confetti from "react-dom-confetti";
+import { FC, useEffect, useState } from 'react';
+import Confetti from 'react-dom-confetti';
 // import ThreeView from "./ThreeView";
 
-import IMG_1351 from "assets/images/IMG_1351.jpg";
-import IMG_1352 from "assets/images/IMG_1352.jpg";
-import IMG_1353 from "assets/images/IMG_1353.jpg";
-import IMG_1354 from "assets/images/IMG_1354.jpg";
-import IMG_1355 from "assets/images/IMG_1355.jpg";
-import Invite from "assets/images/Invite.png";
-import { createMessage, getMessages } from "api/firebase";
-import { toast } from "react-toastify";
+import IMG_1351 from 'assets/images/IMG_1351.jpg';
+import IMG_1352 from 'assets/images/IMG_1352.jpg';
+import IMG_1353 from 'assets/images/IMG_1353.jpg';
+import IMG_1354 from 'assets/images/IMG_1354.jpg';
+import IMG_1355 from 'assets/images/IMG_1355.jpg';
+import Invite from 'assets/images/Invite.png';
+import { createMessage, getMessages } from 'api/firebase';
+import { toast } from 'react-toastify';
 import {
 	DocumentData,
 	QueryDocumentSnapshot,
 	QuerySnapshot,
-} from "@firebase/firestore";
+} from '@firebase/firestore';
 
 const confettiConfig = {
 	angle: 90,
@@ -24,17 +24,17 @@ const confettiConfig = {
 	dragFriction: 0.12,
 	duration: 3000,
 	stagger: 3,
-	width: "10px",
-	height: "10px",
-	perspective: "500px",
-	colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+	width: '10px',
+	height: '10px',
+	perspective: '500px',
+	colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
 };
 
 const Landing: FC = () => {
 	const [sendPress, setSendPress] = useState<boolean>(false);
 	const [is_private, setIsPrivate] = useState<boolean>(false);
-	const [message, setMessage] = useState<string>("");
-	const [username, setUsername] = useState<string>("");
+	const [message, setMessage] = useState<string>('');
+	const [username, setUsername] = useState<string>('');
 
 	const [messages, setMessages] = useState<
 		QueryDocumentSnapshot<DocumentData>[]
@@ -51,17 +51,17 @@ const Landing: FC = () => {
 	async function onSendPress() {
 		await setTimeout(() => {}, 2500);
 		setSendPress(false);
-		if (message !== "" && username !== "") {
+		if (message !== '' && username !== '') {
 			createMessage({
 				message,
 				username,
 				is_private,
 			})
 				.then(() => {
-					setMessage("");
-					setUsername("");
+					setMessage('');
+					setUsername('');
 					setIsPrivate(false);
-					toast("Thank you for your message!");
+					toast('Thank you for your message!');
 					getMessages()
 						.then((querySnapShot: QuerySnapshot) => {
 							setMessages(querySnapShot.docs);
@@ -69,7 +69,7 @@ const Landing: FC = () => {
 						.catch((err) => console.log(err));
 				})
 				.catch(() => {
-					toast("Oh no! Your message was not sent...");
+					toast('Oh no! Your message was not sent...');
 				});
 		}
 	}
@@ -78,16 +78,16 @@ const Landing: FC = () => {
 		<div>
 			<div className="pt-20 text-5xl font-light text-center select-none font-special-2">
 				<h1>
-					Celebrating the marriage of{" "}
-					<span className="text-blue-500 transition-all duration-500 hover:text-yellow-300">
+					Celebrating the marriage of{' '}
+					<div className="text-blue-700 transition-all duration-500 scale-90 hover:text-yellow-300 hover:scale-100">
 						Whitney
-					</span>{" "}
-					and{" "}
-					<span className="text-green-500 transition-all duration-500 hover:text-yellow-300">
+					</div>{' '}
+					&{' '}
+					<div className="text-yellow-600 transition-all duration-500 scale-90 hover:text-yellow-300 hover:scale-100">
 						Stephen
-					</span>
+					</div>
 				</h1>
-				<h1 className="m-10 text-red-500 transition-all duration-500 scale-75 text-8xl hover:text-yellow-300 hover:scale-100">
+				<h1 className="m-10 transition-all duration-500 scale-75 text-8xl hover:text-yellow-300 hover:scale-100">
 					Horton
 				</h1>
 			</div>
@@ -110,9 +110,9 @@ const Landing: FC = () => {
 								<label>Send us a message!</label>
 								<textarea
 									className={`${
-										message === ""
-											? "bg-gray-50"
-											: "shadow-lg"
+										message === ''
+											? 'bg-gray-50'
+											: 'shadow-lg'
 									} outline-none focus:shadow-lg transition-all duration-250 focus:bg-white focus:border-blue-500 border-2 border-gray-300 rounded-md min-h-[300px] p-4`}
 									value={message}
 									onChange={(e) => setMessage(e.target.value)}
@@ -120,9 +120,9 @@ const Landing: FC = () => {
 								<label>Your Name:</label>
 								<input
 									className={`${
-										username === ""
-											? "bg-gray-50"
-											: "shadow-lg"
+										username === ''
+											? 'bg-gray-50'
+											: 'shadow-lg'
 									} w-1/2 p-4 border-2 focus:shadow-lg transition-all duration-250 border-gray-300 rounded-md outline-none focus:border-blue-500 focus:bg-white`}
 									value={username}
 									onChange={(e) =>
@@ -133,8 +133,8 @@ const Landing: FC = () => {
 									<label
 										className={`${
 											is_private
-												? "opacity-100"
-												: "opacity-40"
+												? 'opacity-100'
+												: 'opacity-40'
 										} whitespace-nowrap`}
 									>
 										Make my message private
@@ -229,9 +229,9 @@ const Landing: FC = () => {
 								<label>Send us a message!</label>
 								<textarea
 									className={`${
-										message === ""
-											? "bg-gray-50"
-											: "shadow-lg"
+										message === ''
+											? 'bg-gray-50'
+											: 'shadow-lg'
 									} outline-none focus:shadow-lg transition-all duration-250 focus:bg-white focus:border-blue-500 border-2 border-gray-300 rounded-md min-h-[200px] p-1`}
 									value={message}
 									onChange={(e) => setMessage(e.target.value)}
@@ -239,9 +239,9 @@ const Landing: FC = () => {
 								<label>Your Name:</label>
 								<input
 									className={`${
-										username === ""
-											? "bg-gray-50"
-											: "shadow-lg"
+										username === ''
+											? 'bg-gray-50'
+											: 'shadow-lg'
 									} p-1 border-2 focus:shadow-lg transition-all duration-250 border-gray-300 rounded-md outline-none focus:border-blue-500 focus:bg-white`}
 									value={username}
 									onChange={(e) =>
@@ -252,8 +252,8 @@ const Landing: FC = () => {
 									<label
 										className={`${
 											is_private
-												? "opacity-100"
-												: "opacity-40"
+												? 'opacity-100'
+												: 'opacity-40'
 										} text-base whitespace-nowrap`}
 									>
 										Make my message private
